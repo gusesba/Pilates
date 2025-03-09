@@ -1,6 +1,8 @@
 "use client";
-import Input from "@/components/formulario/Input";
-import Label from "@/components/formulario/Label";
+import Botao from "@/components/ui/botao/Botao";
+import Input from "@/components/ui/formulario/Input";
+import Label from "@/components/ui/formulario/Label";
+import Select from "@/components/ui/formulario/Select";
 import { useState } from "react";
 
 export default function Formulario() {
@@ -57,11 +59,10 @@ export default function Formulario() {
       </div>
       <div>
         <Label>Gênero</Label>
-        <select
+        <Select
           name="genero"
           value={formData.genero}
           onChange={handleChange}
-          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         >
           <option value="">Selecione</option>
@@ -69,7 +70,7 @@ export default function Formulario() {
           <option value="feminino">Feminino</option>
           <option value="outro">Outro</option>
           <option value="nao_informar">Prefiro não informar</option>
-        </select>
+        </Select>
       </div>
       <div>
         <Label>Data de Nascimento</Label>
@@ -91,12 +92,7 @@ export default function Formulario() {
           required
         />
       </div>
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition"
-      >
-        Cadastrar
-      </button>
+      <Botao type="submit">Cadastrar</Botao>
     </form>
   );
 }
